@@ -77,7 +77,7 @@ do_patch() {
         {
             "managed" : False,
             "name" : "src/flutter",
-            "url" : "git@github.com:flutter/engine.git",
+            "url" : "https://github.com/flutter/engine.git",
             "custom_vars" : {
                 "download_android_deps" : False,
                 "download_windows_deps" : False,
