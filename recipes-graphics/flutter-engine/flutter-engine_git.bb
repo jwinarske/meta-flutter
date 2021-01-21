@@ -132,8 +132,8 @@ do_configure() {
     echo ${ARGS_GN_APPEND} >> ${ARGS_GN_FILE}
 
     # libraries required for linking so
-    cp ${STAGING_LIBDIR}/${TARGET_SYS}/9.2.0/crtbeginS.o ${S}/buildtools/linux-x64/clang/lib/clang/11.0.0/lib/${FLUTTER_TRIPLE}/
-    cp ${STAGING_LIBDIR}/${TARGET_SYS}/9.2.0/crtendS.o ${S}/buildtools/linux-x64/clang/lib/clang/11.0.0/lib/${FLUTTER_TRIPLE}/
+    cp ${STAGING_LIBDIR}/${TARGET_SYS}/9.3.0/crtbeginS.o ${S}/buildtools/linux-x64/clang/lib/clang/11.0.0/lib/${FLUTTER_TRIPLE}/
+    cp ${STAGING_LIBDIR}/${TARGET_SYS}/9.3.0/crtendS.o ${S}/buildtools/linux-x64/clang/lib/clang/11.0.0/lib/${FLUTTER_TRIPLE}/
 }
 
 do_compile() {
