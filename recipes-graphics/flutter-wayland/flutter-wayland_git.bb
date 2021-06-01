@@ -1,23 +1,29 @@
-LICENSE = "CLOSED"
+LICENSE = "BSD-3-Clause"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=4fcc629d7a228e5e3e54c2fa1d73f774"
 
-SRCREV = "7cbac5f2efdffffc53cdc929b5c48bf602e18a16"
-SRC_URI = "git://github.com/jwinarske/flutter_wayland;protocol=https;branch=yocto_zeus"
+DEPENDS =+ "\
+    libxkbcommon \
+    flutter-engine \
+    rapidjson \
+    virtual/egl \
+    wayland \
+    waylandpp \
+"
 
-DEPENDS += " flutter-engine wayland mesa"
+RDEPENDS_${PN} += "xkeyboard-config"
+
+SRC_URI = "git://github.com/jwinarske/flutter_wayland;protocol=https;branch=waylandpp"
+SRCREV = "86992d853981c9166a7c4bd63981ebb64eccc85a"
 
 REQUIRED_DISTRO_FEATURES = "wayland"
-
 
 S = "${WORKDIR}/git"
 
 inherit cmake
 
 EXTRA_OECMAKE = " \
-    -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_VERBOSE_MAKEFILE=TRUE \
-    -DFLUTTER_ENGINE_LIBRARY=${STAGING_LIBDIR}/flutter/libflutter_engine.so \
+    -DFLUTTER_ENGINE_LIBRARY=${STAGING_LIBDIR}/libflutter_engine.so \
     "
 
-FILES_${PN}  = " \
-    ${bindir}/flutter_wayland \
-    "
+FILES_${PN}  = "${bindir}/flutter_wayland"
