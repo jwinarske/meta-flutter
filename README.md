@@ -1,5 +1,7 @@
 # meta-flutter
 
+# _Notice: Layer has moved to https://github.com/meta-flutter/meta-flutter.  Redirection will be automatic in the next couple of weeks._
+
 Yocto Layer for Flutter related artifacts.
 
 Recommended development flow starts with making an embedder run on desktop, then target.  This approach will save you a good deal of time and aggrevation.
